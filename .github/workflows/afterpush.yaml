@@ -1,0 +1,27 @@
+name: After Push Workflow (gitversion, git-chglog, tag)
+
+on: workflow_dispatch
+
+jobs:
+  after_push:
+    name: After Push
+    runs-on: ubuntu-latest
+    steps:
+      #############
+      ### SETUP ###
+      #############
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0.9.10
+
+      - name: Determine Version
+        id:   gitversion
+        uses: gittools/actions/gitversion/execute@v0.9.10
+
+      - name: Push tag
+        id: pushtag
+        run: |
+          git tag -a ${{ steps.gitversion.outputs.SemVer }} -m "Tagged version ${{ steps.gitversion.outputs.SemVer }}"
+          git push origin --tags

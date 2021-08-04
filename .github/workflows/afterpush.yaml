@@ -12,6 +12,8 @@ jobs:
       #############
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
 
       - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v0.9.10

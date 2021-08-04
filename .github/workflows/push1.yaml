@@ -1,13 +1,15 @@
-name: Push Workflow
+name: Push1 Workflow
 
 on:
   push:
     branches:
       - master
+    paths-ignore:
+      - '.github/**'
 
 jobs:
-  push:
-    name: Push
+  push1:
+    name: Push1
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

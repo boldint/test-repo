@@ -1,0 +1,20 @@
+name: Push2 Workflow
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '.github/**'
+      - 'ignore_for_push/**'
+
+jobs:
+  push2:
+    name: Push2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: NoOP step
+        run: echo "NoOP!"

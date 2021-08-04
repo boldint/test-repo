@@ -7,31 +7,15 @@ jobs:
     name: After Push
     runs-on: ubuntu-latest
     steps:
-      #############
-      ### SETUP ###
-      #############
       - name: Checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
 
-#      - name: Bump version and push tag
-#        id: tag_version
-#        uses: mathieudutour/github-tag-action@v5.6
-#        with:
-#          create_annotated_tag: true
-#          release_branches: master, develop, qa
-#          dry-run: true
-
       - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v0.9.10
         with:
           versionSpec: '5.6.5'
-
-      - name: Install GitReleaseManager
-        uses: gittools/actions/gitreleasemanager/setup@v0.9.10
-        with:
-          versionSpec: '0.10.x'
 
       - name: Determine Version
         id:   gitversion

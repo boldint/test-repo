@@ -2,7 +2,7 @@ name: After Push Workflow (gitversion, git-chglog, tag)
 
 on:
   workflow_run:
-    workflows: ["Push Workflow"]
+    workflows: ["Push1 Workflow", "Push2 Workflow"]
     branches: [master, develop]
     types:
       - completed

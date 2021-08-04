@@ -1,6 +1,11 @@
 name: After Push Workflow (gitversion, git-chglog, tag)
 
-on: workflow_dispatch
+on:
+  workflow_run:
+    workflows: ["Push Workflow"]
+    branches: [master, develop]
+    types:
+      - completed
 
 jobs:
   after_push:

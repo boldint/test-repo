@@ -2,6 +2,13 @@
 ## [Unreleased]
 
 
+<a name="0.8.1"></a>
+## [0.8.1] - 2021-08-05
+### Improvements
+- **fix_precommit:**  teste 15
+- **fix_precommit:**  tag action
+
+
 <a name="0.8.0"></a>
 ## [0.8.0] - 2021-08-05
 ### Improvements
@@ -65,7 +72,8 @@
 <a name="0.1.0"></a>
 ## 0.1.0 - 2021-08-04
 
-[Unreleased]: https://github.com/boldint/test-repo/compare/0.8.0...HEAD
+[Unreleased]: https://github.com/boldint/test-repo/compare/0.8.1...HEAD
+[0.8.1]: https://github.com/boldint/test-repo/compare/0.8.0...0.8.1
 [0.8.0]: https://github.com/boldint/test-repo/compare/0.7.0...0.8.0
 [0.7.0]: https://github.com/boldint/test-repo/compare/0.6.0...0.7.0
 [0.6.0]: https://github.com/boldint/test-repo/compare/0.5.0...0.6.0

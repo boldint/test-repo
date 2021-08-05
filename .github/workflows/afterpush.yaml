@@ -58,4 +58,4 @@ jobs:
           release_name: ${{ github.ref }}
           body: ${{ steps.github_release.outputs.changelog }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}

@@ -51,8 +51,8 @@ jobs:
       ### CHANGELOG ###
       #################
       - name: Create changelog
-        run: git-chglog -o CHANGELOG.md
-
+        run: |
+          echo "changelog" > CHANGELOG.md
       ###########################
       ### PUSH BACK TO BRANCH ###
       ###########################
@@ -61,4 +61,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           BRANCH_NAME: ${{ github.ref }}
-

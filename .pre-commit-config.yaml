@@ -34,4 +34,4 @@ repos:
     rev: v1.3
     hooks:
     - id:  giticket
-      args: ['--regex=^(feature|bugfix|hotfix|release)/.*$', '--format={ticket}: {commit_msg}']
+      args: ['--regex=^(feature|bugfix|hotfix|release)/.*$', '--format={ticket}: {commit_msg}', '--mode=regex_match']

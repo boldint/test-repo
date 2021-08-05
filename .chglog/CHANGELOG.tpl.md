@@ -4,8 +4,9 @@
 
 {{ if .Unreleased.CommitGroups -}}
 {{ range .Unreleased.CommitGroups -}}
+### {{ .Title }}
 {{ range .Commits -}}
-- {{ .Header }}
+- {{ if .Scope }}**{{ .Scope }}:** {{ end }}{{ .Subject }}
 {{ end }}
 {{ end -}}
 {{ end -}}
@@ -15,22 +16,9 @@
 <a name="{{ .Tag.Name }}"></a>
 ## {{ if .Tag.Previous }}[{{ .Tag.Name }}]{{ else }}{{ .Tag.Name }}{{ end }} - {{ datetime "2006-01-02" .Tag.Date }}
 {{ range .CommitGroups -}}
+### {{ .Title }}
 {{ range .Commits -}}
-- {{ .Header }}
-{{ end }}
-{{ end -}}
-
-{{- if .RevertCommits -}}
-### Reverts
-{{ range .RevertCommits -}}
-- {{ .Revert.Header }}
-{{ end }}
-{{ end -}}
-
-{{- if .MergeCommits -}}
-### Pull Requests
-{{ range .MergeCommits -}}
-- {{ .Header }}
+- {{ if .Scope }}**{{ .Scope }}:** {{ end }}{{ .Subject }}
 {{ end }}
 {{ end -}}
 

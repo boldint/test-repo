@@ -5,14 +5,26 @@ info:
   repository_url: https://github.com/boldint/test-repo
 options:
   commits:
-    # filters:
-    #   Type: []
+    filters:
+      Type:
+        - feature
+        - hotfix
+        - bugfix
   commit_groups:
-    # title_maps: []
+    group_by: Type
+    title_order:
+      - hotfix
+      - bugfix
+      - feature
+    title_maps:
+      feature: Improvements
+      hotfix: Bug fixes
+      bugfix: Bug fixes
   header:
-    pattern: "^(feature|hotfix|bugfix|release)/(.*)$"
+    pattern: "^(feature|hotfix|bugfix|release)(.*):(.*)$"
     pattern_maps:
       - Type
+      - Scope
       - Subject
   notes:
     keywords:

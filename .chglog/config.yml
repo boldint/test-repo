@@ -8,7 +8,12 @@ options:
     # filters:
     #   Type: []
   commit_groups:
-    # title_maps: []
+    group_by: Type
+    sort_by: Title
+    title_order:
+      - feat
+    title_maps:
+      feat: Features
   header:
     pattern: "^(feature|hotfix|bugfix|release)/(.*)$"
     pattern_maps:

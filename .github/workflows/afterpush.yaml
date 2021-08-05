@@ -51,6 +51,8 @@ jobs:
           git fetch
           echo "::set-output name=lastsha::$(git rev-parse HEAD)"
 
+      - run: echo ${{ steps.get_last_sha.outputs.lastsha }}
+
       - name: Create tag
         id: create_tag
         uses: actions/github-script@v4

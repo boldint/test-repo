@@ -1,12 +1,26 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
-- feature/fix_precommit: fix changelog
-- feature/fix_precommit: changelog
-- feature/fix_precommit: teste 13
-- feature/fix_precommit: pre-commit
-- feature/fix: pre-commit
-- feature/fix:+semver: minor pre-commit
+
+<a name="0.7.0"></a>
+## [0.7.0] - 2021-08-05
+### Improvements
+- **/fix_precommit:**  changelog
+- **/fix_precommit:**  fix changelog
+
+
+<a name="0.6.0"></a>
+## [0.6.0] - 2021-08-05
+### Improvements
+-  teste 11
+-  pre-commit
+- **/fix:**  pre-commit
+- **/fix:+semver:**  minor pre-commit
+- **/fix_precommit:**  teste 13
+- **/fix_precommit:**  pre-commit
+- **/fix_precommit:**  fix changelog
+- **/fix_precommit:**  changelog
+- **:+semver:**  minor teste11
 
 
 <a name="0.5.0"></a>
@@ -45,7 +59,9 @@
 <a name="0.1.0"></a>
 ## 0.1.0 - 2021-08-04
 
-[Unreleased]: https://github.com/boldint/test-repo/compare/0.5.0...HEAD
+[Unreleased]: https://github.com/boldint/test-repo/compare/0.7.0...HEAD
+[0.7.0]: https://github.com/boldint/test-repo/compare/0.6.0...0.7.0
+[0.6.0]: https://github.com/boldint/test-repo/compare/0.5.0...0.6.0
 [0.5.0]: https://github.com/boldint/test-repo/compare/0.4.4...0.5.0
 [0.4.4]: https://github.com/boldint/test-repo/compare/0.4.3...0.4.4
 [0.4.3]: https://github.com/boldint/test-repo/compare/0.4.2...0.4.3

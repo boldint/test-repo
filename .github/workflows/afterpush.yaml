@@ -45,13 +45,11 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           BRANCH_NAME: ${{ github.ref }}
 
-      - name: Get last sha
+      - name: Get last sha after the push in the above step
         id: get_last_sha
         run: |
           git fetch
           echo "::set-output name=lastsha::$(git rev-parse HEAD)"
-
-      - run: echo ${{ steps.get_last_sha.outputs.lastsha }}
 
       - name: Create tag
         id: create_tag
@@ -62,5 +60,5 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               ref: "refs/tags/${{ steps.gitversion.outputs.SemVer }}",
-              sha: ${{ steps.get_last_sha.outputs.lastsha }}"
+              sha: "${{ steps.get_last_sha.outputs.lastsha }}"
             })

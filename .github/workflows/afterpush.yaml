@@ -45,8 +45,10 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           BRANCH_NAME: ${{ github.ref }}
 
-      - name: Checkout
+      - name: Get updated
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Create tag
         id: create_tag
@@ -56,5 +58,6 @@ jobs:
             github.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              ref: "refs/tags/${{ steps.gitversion.outputs.SemVer }}"
+              ref: "refs/tags/${{ steps.gitversion.outputs.SemVer }}",
+              sha: context.sha
             })

@@ -5,6 +5,8 @@
 <a name="0.8.1"></a>
 ## [0.8.1] - 2021-08-05
 ### Improvements
+- **fix_precommit:**  teste 17
+- **fix_precommit:**  tag action
 - **fix_precommit:**  teste 16
 - **fix_precommit:**  tag action
 - **fix_precommit:**  teste 15

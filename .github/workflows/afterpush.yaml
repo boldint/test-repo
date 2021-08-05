@@ -50,12 +50,12 @@ jobs:
       - name: Build Changelog
         uses: mikepenz/release-changelog-builder-action@v1
         id: github_release
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
 
       - name: Create Release
         uses: actions/create-release@v1
         with:
           tag_name: ${{ github.ref }}
           release_name: ${{ github.ref }}
-          body: ${{ steps.github_release.outputs.changelog }}
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+          body: ${{ steps.github_release.outputs.changelog }}     

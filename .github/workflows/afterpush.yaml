@@ -25,6 +25,9 @@ jobs:
         with:
           versionSpec: '5.6.5'
 
+      - name: Install git-chglog
+        uses: actions/install-git-chglog@v1
+
       ###########
       ### TAG ###
       ###########
@@ -47,15 +50,15 @@ jobs:
       #################
       ### CHANGELOG ###
       #################
-      - name: Build Changelog
-        uses: mikepenz/release-changelog-builder-action@v1
-        id: github_release
+      - name: Create changelog
+        run: git-chglog -o CHANGELOG.md
+
+      ###########################
+      ### PUSH BACK TO BRANCH ###
+      ###########################
+      - name: Push changed files to branch
+        uses: mikeal/publish-to-github-action@1.0.0
         env:
           GITHUB_TOKEN: ${{ github.token }}
+          BRANCH_NAME: ${{ github.ref }}
 
-      - name: Create Release
-        uses: actions/create-release@v1
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
-          body: ${{ steps.github_release.outputs.changelog }}     

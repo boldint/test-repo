@@ -10,8 +10,9 @@ options:
   commit_groups:
     # title_maps: []
   header:
-    pattern: "^(.*)$"
+    pattern: "^(feature|hotfix|bugfix|release)/(.*)$"
     pattern_maps:
+      - Type
       - Subject
   notes:
     keywords:

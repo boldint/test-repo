@@ -28,6 +28,13 @@ jobs:
       - name: Install git-chglog
         uses: craicoverflow/install-git-chglog@v1
 
+      #################
+      ### CHANGELOG ###
+      #################
+      - name: Create changelog
+        run: |
+          git-chglog -o CHANGELOG.md
+
       ###########
       ### TAG ###
       ###########
@@ -47,12 +54,6 @@ jobs:
               sha: context.sha
             })
 
-      #################
-      ### CHANGELOG ###
-      #################
-      - name: Create changelog
-        run: |
-          echo "changelog" > CHANGELOG.md
       ###########################
       ### PUSH BACK TO BRANCH ###
       ###########################

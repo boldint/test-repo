@@ -21,7 +21,7 @@ options:
       hotfix: Bug fixes
       bugfix: Bug fixes
   header:
-    pattern: "^(feature|hotfix|bugfix|release)(.*):(.*)$"
+    pattern: "^(feature|hotfix|bugfix|release)/(.*):(.*)$"
     pattern_maps:
       - Type
       - Scope
